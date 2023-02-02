@@ -1,1 +1,1 @@
-## Generation of Sawtooth wave using Op-Amp.
+## Mathematical operations using Op-Amp.
