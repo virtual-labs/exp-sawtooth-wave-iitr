@@ -1,73 +1,36 @@
 ## Procedure<br>
 #### Familiarise with components
-<div style="text-align:justify">
 
+**1.** Click on the component button to place the component on the table. 
 <div style="text-align:center">   
 
-![](images/board.png "Breadbord")&emsp; ![](images/supply.png "Power Supply")&emsp; ![](images/multimeter.png "Multimeter")&emsp; ![](images/IC1.png "IC")&emsp; ![](images/power1.png "Variable DC Supply")&emsp; ![](images/power2.png "Variable DC Supply")&emsp; ![](images/power3.png "Variable DC Supply")&emsp; ![](images/resistance.png "1KΩResistor")  
-
+![](images/board.png "breadbord")&emsp; ![](images/supply.png "Power Supply")&emsp; ![](images/r1.png "100KΩResistor")&emsp; ![](images/r2.png "120KΩResistor")&emsp; ![](images/r3.png "5.6KΩResistor")&emsp; ![](images/r4.png "100KΩResistor")  ![](images/IC1.png "IC1")&emsp; ![](images/IC1.png "IC2")&emsp; ![](images/capacitor.png "Capacitor")&emsp; ![](images/cro.png "CRO")&emsp; ![](images/diode1.png "Diode(D1)")&emsp; ![](images/diode2.png "Diode(D2)")&emsp;
+ 
 **Fig 1: Components**
 </div>
 
-### **A. Addition**
-
-**1.** Click on the component button to place the component on the table.  
-**2**. Make connections as per the circuit diagram or connection table.
-<div style="text-align:center">  
-
-![](images/image1.1ins.png) 
-
-**Fig 2: Circuit diagram for addtion.**
-
-**Table 1: Connection table for addtion.**
-
-![](images/table1.png)
-</div>
-  
-
-**3.** Click on **'Add to table'** button and calculate the output voltage using the formula mentioned in the figure/instructions of respective simulator to add calculations to the table.
-
-### **B. Subtraction**
-
-**1.** Click on the component button to place the component on the table.  
-**2**. Make connections as per the circuit diagram or connection table.
-<div style="text-align:center">    
-
-![](images/image2ins.png) 
-
-**Fig 3: Circuit diagram for subtraction.**
-
-**Table 2: Connection table for subtraction.**
-
-![](images/table2.png)
-</div>
-  
-
-**3.** Click on **'Add to table'** button and calculate the output voltage using the formula mentioned in the figure/instructions of respective simulator to add calculations to the table.
-
-### **C. Multiplication by constant ( and Division when Rf < Ri)**
-
-**1.** Click on the component button to place the component on the table.  
+**2.** Make connections as per the circuit diagram or connection table.
 <div style="text-align:center"> 
-  
-![](images/board.png "Breadbord")&emsp; ![](images/supply.png "Power Supply")&emsp; ![](images/multimeter.png "Multimeter")&emsp; ![](images/IC1.png "IC")&emsp; ![](images/power1.png "Variable DC Supply")&emsp; ![](images/resistance2.1.png "30KΩResistor")&emsp; ![](images/resistance1.1.png "30KΩResistor")&emsp; ![](images/resistance3.png "Feedback resistor")  
 
-**Fig 4: Components**
+![](images/image1ins.png)  
+
+**Fig 2: Circuit diagram of sawtooth wave generator.**
+
+**Table 1: Connection table of sawtooth wave generator.**
+
+![](images/table.png)
+</div> 
+
+**3.** Connect output of the circuit to channel CH1 of C.R.O.  
+**4.** Click on **'Check Connection'** button to check connections. If correct, Click on **'Show wave'** button to view the output waveform and adjust the C.R.O.  
+**5.** Measure the frequency of generated sawtooth wave from C.R.O.  
+**6.** Calculate the frequency of output wave using the formula:  
+<div style="text-align:center">
+
+**f = (1/(2\*C1\*(R3+R4)))\*(R2/R1)**
 </div>
 
-**2**. Make connections as per the circuit diagram or connection table.
-<div style="text-align:center">  
+**7.** Compare the calculated frequency with the experimentally measured frequency by clicking on **'Show result'** button. Enter experimentally measured frequency.
 
-![](images/image4ins.png) 
 
-**Fig 5: Circuit diagram for multiplication/division by a constant.**
-
-**Table 3: Connection table for multiplication/division by a constant.**
-
-![](images/table3.png)
-</div>
-
-**3.** Click on **'Add to table'** button and calculate the output voltage using the formula mentioned in the figure/instructions of respective simulator to add calculations to the table.
-
-</div>
  

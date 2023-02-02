@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematical operations using Op-Amp</title>
+    <title>Generation of Sawtooth wave using Op-Amp</title>
    
 
     <!--JSplumb-->
@@ -19,292 +19,701 @@
     
     <!--jQuery-->
     <script src="js\jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/excanvas.js"></script>
-    <script src="js/segment-display.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js">
+     </script>  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
+    
     <!--JS files-->
-    <script src="js/script1.js"></script>
-    <script src="js/graph.js"></script> 
-       
+    <script  src="js/script.js"></script>
+    <script src="js/graph.js"></script>   
 
     <!--CSS files-->
     <link rel="stylesheet" href="css/style.css">
-  </head>
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/style1.css">
+ <!--   <link rel="stylesheet" href="css/customize-presets.css">-->
+    <link rel="stylesheet" href="css/p1.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/Knob.js"></script>
+    <script src="js/ui.js"></script>
+ 
+
+    <script type="text/javascript" src="js/knob1.js"></script>
+    <script type="text/javascript" src="js/p1.js"></script>
+  
+     <style type="text/css">
+
+  
+
+    .ui-knob {
+      position: relative;
+      width:  44px;
+      height: 44px;
+      border-radius:50px;
+      background-color: #3c7bdc;
+
+      /* center the div */
+      top:50%;
+      left:50%;
+      
+    }
+    
+
+    .ui-indicator {
+      position: absolute;
+      
+/* Due to a display bug with anti-aliasing */
+      -webkit-backface-visibility: hidden;
+       border: 1px solid #808080;
+       background-color: #f2f2f2;
+     
+    }
+    .rotate.ui-indicator {
+     height: 10px;
+     width: 10px;
+    margin-top: -1px;
+   border-radius: 50%;
+    }
+   
+    
+
+    .position-rotate.ui-indicator {
+        height: 10px;
+       width: 10px;
+        margin-top: -1px;
+        border-radius: 50%;
+    }
+
+  </style>
+  <script type="text/javascript">
+        
+        
+        function showAxes(ctx,axes) {
+           
+            
+            ctx.beginPath();
+            ctx.strokeStyle = "#00ff00";
+             ctx.stroke();
+        }
+ 
+        function plotTri(ctx, xOffset, yOffset) {
+             var two=document.getElementById("position-rotate").value;
+             var fre=document.getElementById("time").value;
+            // var a=document.getElementById("capacitor").value;
+    
+             var three=document.getElementById("ch1").value;
+             var width = ctx.canvas.width;
+             var height = ctx.canvas.height;
+             var scale = 20;
+             var frequency=80;
+     
+          
+            ctx.beginPath();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = "#00ff00";
+            
+               if(fre== 0) {amplitude=0;} 
+               else if(fre== 10)
+               {   if (three==5){var amplitude=3.1;frequency=65; }
+                   else if(three== 10){amplitude=1.7;frequency=65;}
+                   else if(three== 15){amplitude=1.1;frequency=65;}
+                   else if(three== -5){amplitude= 30;frequency=65;}
+                   else if(three== -10){amplitude=20;frequency=65;}
+                   else if(three== -15){amplitude=10;frequency=65;}
+                   else {amplitude=0;}
+               }
+              else if(fre== 20)
+              {  if (three==5){var amplitude=7.55;frequency=30 }
+                   else if(three== 10){amplitude=3.4;frequency=30}
+                   else if(three== 15){amplitude=2.3;frequency=30}
+                   else if(three== -5){amplitude= 60;frequency=30}
+                   else if(three== -10){amplitude=50;frequency=30}
+                   else if(three== -15){amplitude=40;frequency=30}
+                   else {amplitude=0;}
+               }  
+          
+           else if(fre== 30)
+           { if (three==5){var amplitude=10.5; frequency=22}
+                   else if(three== 10){amplitude=5.2; frequency=22}
+                   else if(three== 15){amplitude=2.8; frequency=22}
+                   else if(three== -5){amplitude= 70;frequency=22}
+                    else if(three== -10){amplitude=60; frequency=22}
+                    else if(three== -15){amplitude=50; frequency=22}
+                   else {amplitude=0;} }  
+           else  if(fre== 40)
+           { if (three==5){var amplitude=14.6;frequency=16 }
+                   else if(three== 10){amplitude=7.3;frequency=16 }
+                   else if(three== 15){amplitude=3.8;frequency=16 }
+                   else if(three== -5){amplitude= 80;frequency=16 }
+                    else if(three== -10){amplitude=70;frequency=16 }
+                    else if(three== -15){amplitude=60;frequency=16 }
+                   else {amplitude=0;} }  
+        
+            else if(fre== 50)
+            { if (three==5){var amplitude=24.5;frequency=10; }
+                   else if(three== 10){amplitude=12.8;frequency=10;}
+                   else if(three== 15){amplitude=8.7;frequency=10;}
+                   else if(three== -5){amplitude= 90;frequency=10;}
+                    else if(three== -10){amplitude=80;frequency=10;}
+                    else if(three== -15){amplitude=70;frequency=10;}
+                   else {amplitude=0;} }  
+                   else if(fre== 60)
+            { if (three==5){var amplitude=44.6;frequency=6; }
+                   else if(three== 10){amplitude=21.4;frequency=6;}
+                   else if(three== 15){amplitude=15;frequency=6;}
+                   else if(three== -5){amplitude= 100;frequency=6;}
+                    else if(three== -10){amplitude=90;frequency=6;}
+                    else if(three== -15){amplitude=80;frequency=6;}
+                   else {amplitude=0;} }  
+           
+              
+           
+
+               var x = 0;
+               var y=0;
+               var p= document.getElementById("rotate").value;
+            while (x < 800) {
+          
+             
+              y=Math.abs(x+xOffset);  //for sawtooth 
+              y=height/1.5-Math.abs(amplitude*(y%(frequency)));  // for sawtooth
+
+             ctx.lineTo(x-p, y-two);
+         
+                x+=1;
+            
+          }
+            ctx.stroke();
+            
+            ctx.restore();
+        }
+         function plotTri1(ctx, xOffset, yOffset) {
+             var two=document.getElementById("position-rotate").value;
+             var fre=document.getElementById("time").value;
+             var a=document.getElementById("capacitor").value;
+    
+             var three=document.getElementById("ch1").value;
+             var width = ctx.canvas.width;
+             var height = ctx.canvas.height;
+             var scale = 20;
+             var frequency=80;
+     
+          
+            ctx.beginPath();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = "#00ff00";
+            
+               if(fre== 0) {amplitude=0;} 
+               else if(fre== 10)
+               {   if (three==5){var amplitude=3.1;frequency=65; }
+                   else if(three== 10){amplitude=1.7;frequency=65;}
+                   else if(three== 15){amplitude=1.1;frequency=65;}
+                   else if(three== -5){amplitude= 30;frequency=65;}
+                   else if(three== -10){amplitude=20;frequency=65;}
+                   else if(three== -15){amplitude=10;frequency=65;}
+                   else {amplitude=0;}
+               }
+              else if(fre== 20)
+              {  if (three==5){var amplitude=7.55;frequency=30 }
+                   else if(three== 10){amplitude=3.4;frequency=30}
+                   else if(three== 15){amplitude=2.3;frequency=30}
+                   else if(three== -5){amplitude= 60;frequency=30}
+                   else if(three== -10){amplitude=50;frequency=30}
+                   else if(three== -15){amplitude=40;frequency=30}
+                   else {amplitude=0;}
+               }  
+          
+           else if(fre== 30)
+           { if (three==5){var amplitude=10.5; frequency=22}
+                   else if(three== 10){amplitude=5.2; frequency=22}
+                   else if(three== 15){amplitude=2.8; frequency=22}
+                   else if(three== -5){amplitude= 70;frequency=22}
+                    else if(three== -10){amplitude=60; frequency=22}
+                    else if(three== -15){amplitude=50; frequency=22}
+                   else {amplitude=0;} }  
+           else  if(fre== 40)
+           { if (three==5){var amplitude=14.6;frequency=16 }
+                   else if(three== 10){amplitude=7.3;frequency=16 }
+                   else if(three== 15){amplitude=3.8;frequency=16 }
+                   else if(three== -5){amplitude= 80;frequency=16 }
+                    else if(three== -10){amplitude=70;frequency=16 }
+                    else if(three== -15){amplitude=60;frequency=16 }
+                   else {amplitude=0;} }  
+        
+            else if(fre== 50)
+            { if (three==5){var amplitude=24.5;frequency=10; }
+                   else if(three== 10){amplitude=12.8;frequency=10;}
+                   else if(three== 15){amplitude=8.7;frequency=10;}
+                   else if(three== -5){amplitude= 90;frequency=10;}
+                    else if(three== -10){amplitude=80;frequency=10;}
+                    else if(three== -15){amplitude=70;frequency=10;}
+                   else {amplitude=0;} }  
+                   else if(fre== 60)
+            { if (three==5){var amplitude=44.6;frequency=6; }
+                   else if(three== 10){amplitude=21.4;frequency=6;}
+                   else if(three== 15){amplitude=15;frequency=6;}
+                   else if(three== -5){amplitude= 100;frequency=6;}
+                    else if(three== -10){amplitude=90;frequency=6;}
+                    else if(three== -15){amplitude=80;frequency=6;}
+                   else {amplitude=0;} }  
+           
+              
+       
+               var x = 0;
+               var y=0;
+               var p= document.getElementById("rotate").value;
+            while (x < 800) {
+          
+             
+              y=Math.abs(x);  //for sawtooth 
+              y=height/1.5-Math.abs(amplitude*(y%(frequency)));  // for sawtooth
+
+             ctx.lineTo(x-p, y-two);
+         
+                x+=1;
+            
+          }
+            ctx.stroke();
+            
+            ctx.restore();
+        }
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            context.clearRect(0,0, 600, 1000);
+            //showAxes(context);
+            context.save();            
+            
+            plotTri(context, step, 20);
+            context.restore();
+            
+            step +=1;
+            window.requestAnimationFrame(draw);
+        }
+        
+         function draw1() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            context.clearRect(0,0, 600, 1000);
+            //showAxes(context);
+            context.save();            
+            
+            plotTri1(context, step, 20);
+            context.restore();
+            
+          
+            window.requestAnimationFrame(draw1);
+        }     
+    
+        function init() {
+            window.requestAnimationFrame(draw);
+           
+              var f=document.getElementById("mydiv");
+             f.style.visibility= "visible";
+          
+             
+
+        }
+          function init1() {
+            
+            window.requestAnimationFrame(draw1);
+           
+              var f=document.getElementById("mydiv");
+             f.style.visibility= "visible";
+             
+
+        }
+        var step = -4;
+        function myfun() {
+  var x = document.getElementById("mydiv");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+    document.getElementById("startbutton").innerHTML="Hide wave";
+          document.getElementById("horizontal").style.visibility="visible";
+   document.getElementById("vertical").style.visibility="visible";
+    init();
+  } else {
+    x.style.visibility = "hidden";
+    document.getElementById("startbutton").innerHTML="Show wave";
+          document.getElementById("horizontal").style.visibility="hidden";
+   document.getElementById("vertical").style.visibility="hidden";
+
+  }
+ 
+            
+}
+    </script>
+
+</head>
 
 <body>
-
   <div id="exp-name">
-    <h2 id="heading">Mathematical operations using Op-Amp</h2>
+    <h2>Generation of Sawtooth wave using Op-Amp</h2>
 </div>
+   
 
 <div id="simulation">
-  <div class="left">
+<div class="left">
+  <div class="border" id="mid">
 
-            <div class="border" id="mid">
-
-            <div id="board">
+      <div id="board">
                       
-     <div class="ic" id="ic741" draggable="true" ><img src="images/ic.png" id="ic1" width="55px"height="45px" style="margin-top: 50px;">
-      <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:3px;"><b>1</b></label>  
-      <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:17px;"><b>2</b></label>   
-      <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:32px;"><b>3</b></label>      
-      <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:46px;"><b>4</b></label>
-      <label style="font-size: 15px;  color: black; position: absolute;top: -20px;left: 3px;"><b>8</b></label>
-      <label style="font-size: 15px;  color: black; position: absolute; top: -20px;left:17px;"><b>7</b></label>
-      <label style="font-size: 15px;  color: black; position: absolute; top: -20px;left:32px;"><b>6</b></label>     
-      <label style="font-size: 15px;  color: black; position: absolute; top: -20px;left:46px;"><b>5</b></label></div>
-             <!--         <div class="ic" id="ic7408" draggable="true"></div>-->
-                     
-   
- 
- 
-    <div id="resistance1" draggable="false">
-    <img src="images/resistance1.png" id="res1"  width="15px" height="45px" style="position: absolute; top: 5px; left: 3px">
-    <!--label id="resis1" style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>1</sub></label-->
-    <label id="resis1" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>1</sub></label>
-    <label id="resis1" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 1px;"><B>C1</B></label>
-    <label id="resis1" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 0px;"><B>A1</B></label>
-  	</div>
+           <div class="ic" id="ic741" draggable="true" ><img src="images/ic.png" id="ic1" width="55px"height="45px" style="margin-top: 50px;">
+            <label  style="font-size: 18px;color: blue;position: absolute;top: 60px;left: -24px;">IC<sub>1</sub></label>
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:3px;"><b>1</b></label>  
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:17px;"><b>2</b></label>   
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:32px;"><b>3</b></label>      
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:46px;"><b>4</b></label>
+            <label style="font-size: 15px;  color: black; position: absolute;top: -24px;left: 3px;"><b>8</b></label>
+            <label style="font-size: 15px;  color: black; position: absolute; top: -24px;left:17px;"><b>7</b></label>
+            <label style="font-size: 15px;  color: black; position: absolute; top: -24px;left:32px;"><b>6</b></label>     
+            <label style="font-size: 15px;  color: black; position: absolute; top: -24px;left:46px;"><b>5</b></label>
+          </div>
 
-    <div id="resistance2" draggable="false">
-    <img src="images/resistance1.png" id="res2" width="15px"height="45px" style="position: absolute; top: 5px; left: 4px">
-    <!--label id="resis2"style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>2</sub></label-->
-    <label id="resis2" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>2</sub></label>
-    <label id="resis2" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 3px;"><B>C1</B></label>
-    <label id="resis2" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 3px;"><B>A1</B></label>
-	  </div>
-
-
-    <div id="resistance3" draggable="false">
-    <img src="images/resistance1.png" id="res3"  width="15px"height="45px" style="position: absolute; top: 5px; left: 5px">
-    <!--label id="resis3"style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>3</sub></label-->
-    <label id="resis3" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>3</sub></label>
-    <label id="resis3" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 3px;"><B>C1</B></label>
-    <label id="resis3" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 3px;"><B>A1</B></label>
-	  </div>
-
-    <div id="resistance4" draggable="false"> 
-    <img src="images/resistance1.png" id="res4" width="15px"height="45px" style="position: absolute; top: 5px; left: 6px">
-    <!--label id="resis4" style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>4</sub></label-->
-    <label id="resis4" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>4</sub></label>
-    <label id="resis4" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 3px;"><B>C1</B></label>
-    <label id="resis4" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 3px;"><B>A1</B></label>
-	  </div>
-
-    <div id="resistance5" draggable="true">
-    <img src="images/resistance1.png" id="res5" width="15px"height="45px" style="position: absolute; top: 5px; left: 4px">
-    <!--label id="resis5" style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>5</sub></label-->
-    <label id="resis5" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>5</sub></label>
-    <label id="resis5" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 3px;"><B>C1</B></label>
-    <label id="resis5" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 3px;"><B>A1</B></label>
-	  </div>
-    
-    <div id="resistance6" draggable="true">
-    <img src="images/resistance1.png" id="res6" width="15px"height="45px" style="position: absolute; top: 5px; left: 4px">
-    <!--label id="resis6"style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>6</sub></label-->
-    <label id="resis6" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>6</sub></label>
-    <label id="resis6" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 3px;"><B>C1</B></label>
-    <label id="resis6" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 3px;"><B>A1</B></label>
-	  </div>
-    
-    <div id="resistance7" draggable="true">
-    <img src="images/resistance1.png" id="res7" width="15px"height="45px" style="position: absolute; top: 5px; left: 4px">
-    <!--label id="resis7"style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>7</sub></label-->
-    <label id="resis7" style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>7</sub></label>
-    <label id="resis7" style="font-size: 15px;color: BLACK;position: absolute;top: -70px;left: 3px;"><B>C1</B></label>
-    <label id="resis7" style="font-size: 15px;color: BLACK;position: absolute;top: 107px;left: 3px;"><B>A1</B></label>
-    </div>
-    
-   <!-- <img src="images/connector.png" id="connector1" width="50px" height="28px" style="position: absolute;  top:3px; left:430px;" >-->
-   
-
-    <div id="power1" draggable="true">
-    <img src="images/Power1.png" height="100" width="130">
-    <div class="true" id="heading1" >+V<sub>1</sub>-</div>
-    <canvas id="one" width="70" height="33" style="border: 1px solid black; background-color: black; border-radius: 4px; padding: 3px; "></canvas>
-    </div>
-
-    <div id="power2" draggable="true">
-    <img src="images/Power2.png" height="100" width="130">
-    <div class="true"id="heading2">+V<sub>2</sub>-</div>
-    <canvas id="two" width="70" height="33" style="border: 1px solid black; background-color: black;border-radius: 4px; padding: 3px; "></canvas>
-    </div>
-    
-    <div id="power3" draggable="true">
-    <img src="images/Power3.png" height="100" width="130">
-    <div class="true" id="heading3">+V<sub>3</sub>-</div>
-    <canvas id="three" width="70" height="33" style="border: 1px solid black; background-color: black;border-radius: 4px; padding: 3px; "></canvas>
-    </div>
-
-    <div id="power4" draggable="true">
-    <img src="images/ptm.png" height="100" width="80">
-    <div class="true" id="heading4">R<sub>f</sub> (Kohm) </div>
-    <div id="four" width="40" height="40" style="border: 4px; background-color: silver; border-radius: 16px; padding:5px;  border-color: #fff; height: 25px; width: 25px;"></div>
-    </div>
-    </div>
-
-
-         
-
-    <div id="supply" draggable="true"></div>
-                    
-  <div id="shape" style="visibility: hidden;">
-	<img src="images/DMM.png" width="130" height="220" style="position: absolute; top: 50px; left: 950px;">
-  </div>
-  </div>
-  <div class="bottom">
-    <button id="checkbutton" disabled > Check Connection </button>
-    <button id="startbutton" disabled>Show Output</button>
-    <button id="resetbutton" disabled onclick="resetCircuit()">Reset</button>
-    <button id="addtable" disabled=""> <b>Add to table</b></button>
-</div>
-  </div>
-
-
-<div class="right">
-  <div>
-    <button class="right_btn" id="First">Instructions</button>
-    <div class="Button-data" id="First_Data" style="display: none">
-        <div class="panel">
-            <button class="close-btn" id="close-btn"><span>&#10005</span></button>
-           <div id="first_insrt">
-            <ol type="1" style="padding: 10px;">
-                <li>Click on the component button to place the component on the table.</li>               
-                <li>Make connections as per the circuit diagram.</li>
-                <figure>
-                  <img src="images/image1ins.png" align="center">
-                  <figcaption style="text-align:center;">Fig. Circuit Diagram</figcaption>
-                </figure><br/>
-                <li>Click on '<b>Check Connection</b>' button. If connections are right, use range sliders inside <b>'Components'</b> box to vary the input voltages.</li>
-                <li>Click on <b>'Show Output'</b> button to view the output on DMM.</li>
-                <li>Click on <b>'Add to table'</b> button and calculate the output voltage using the formula:<br><center><b>V<sub>o</sub> = - (V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub>)</b></center><br> to add calculations to the table.<br></li>
+           <div class="ic3" id="ic7411" draggable="true" ><img src="images/ic.png" id="ic2" width="55px"height="45px" style="margin-top: 50px;">
+            <label  style="font-size: 18px;color: blue;position: absolute;top: 60px;left: -24px;">IC<sub>2</sub></label>
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:3px;"><b>1</b></label>  
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:17px;"><b>2</b></label>   
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:32px;"><b>3</b></label>      
+            <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:46px;"><b>4</b></label>
+            <label style="font-size: 15px;  color: black; position: absolute;top: -24px;left: 3px;"><b>8</b></label>
+            <label style="font-size: 15px;  color: black; position: absolute; top: -24px;left:17px;"><b>7</b></label>
+            <label style="font-size: 15px;  color: black; position: absolute; top: -24px;left:32px;"><b>6</b></label>     
+            <label style="font-size: 15px;  color: black; position: absolute; top: -24px;left:46px;"><b>5</b></label>
+          </div>
             
-                </ol></div>
+                     
+            <div id="resistance1" draggable="true"> <img src="images/resistance1.png" id="res1" width="15px"height="45px" >
+              <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>3</sub></label--> 
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>3</sub></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label>
+            </div>
 
-                <div id="second_insrt" style="display: none;">
-                  <ol type="1" style="padding: 10px; ">
-                      <li>Click on the component button to place the component on the table.</li>               
-                      <li>Make connections as per the circuit diagram.</li>
-                      <figure>
-                        <img src="images/image2ins.png" align="center">
-                        <figcaption style="text-align:center;">Fig. Circuit Diagram</figcaption>
-                      </figure><br/>
-                      <li>Click on '<b>Check</b>' button. If connections are right, use range sliders inside <b>'Components'</b> box to vary the input voltages.</li>
-                      <li>Click on <b>'Show Output'</b> button to view the output on DMM.</li>
-                      <li>Click on <b>'Add to table'</b> button and calculate the output voltage using the formula:<br><center><b>V<sub>o</sub> = V<sub>2</sub> - V<sub>1</sub></b></center><br> to add calculations to the table.</li>
-                 
-                      </ol></div>
+            <div id="resistance2" draggable="true"> <img src="images/resistance3.png" id="res2" width="15px"height="45px" > 
+              <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>4</sub></label-->
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>4</sub></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label>
+            </div>
 
-                      <div id="third_insrt" style="display: none;">
-                        <ol type="1" style="padding: 10px; ">
-                            <li>Click on the component button to place the component on the table.</li>               
-                            <li>Make connections as per the circuit diagram.</li>
-                            <figure>
-                              <img src="images/image4ins.png" align="center">
-                              <figcaption style="text-align:center;">Fig. Circuit Diagram</figcaption>
-                            </figure><br/>
-                            <li>Click on '<b>Check</b>' button. If connections are right, use range sliders inside <b>'Components'</b> box to vary the input voltages.</li>
-                            <li>Click on <b>'Show Output'</b> button to view the output on DMM.</li>
-                            <li>Click on <b>'Add to table'</b> button and calculate the output voltage using the formula:<br><center><b>V<sub>o</sub> = - (R<sub>f</sub>/R<sub>1</sub>)*V<sub>1</sub></b></center><br> to add calculations to the table.</li>
-                        
-                            </ol></div>
-        </div>
-    </div></div>
 
-  <div id="chooseone">
-  <b>Select one of them:</b><br><br>
-  <input type="radio" id="first"  name="option" value="first" onclick="addition();">
-  <label  class="radio-input" for="first">Addition</label><br><br>
-  <input type="radio" id="second"  name="option" value="second" onclick="subtraction();">
-  <label  class="radio-input" for="second">Subtraction</label><br><br>
-  <input type="radio" id="fourth"  name="option" value="fourth" onclick="multiplication();">
-  <label  class="radio-input" for="fourth">Multiplication by constant</label><br>  <br> 
-  </div>
-        
-         
+            <div id="resistance3" draggable="true"> <img src="images/resistance2.png" id="res3"  width="15px"height="45px"> 
+              <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>2</sub></label-->
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>2</sub></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label> 
+            </div>
 
-  <fieldset class="Components" id="components" >
-  <legend><b style="font-size: 22px;"> Components</b></legend>    
-         
-  <button id="breadbutton" onclick="breadboard()" >Breadboard </button><br>
-  <button id="supplybutton" onclick="supply()">±15V DC Supply</button><br>
-  <button id="switchbutton">Digital multimeter</button><br>
-  <button id="ic2button" onclick="ic741()" >IC-741</button><br>
-  <button id="capbutton" > 0 to 2V Variable DC supply</button></br>
-  <button id="resistancebutton" >Resistors</button></br>
-  <input type="range" min="0" max="2" step="0.1" onchange="focus1()" value="0"  id="myrange" style="visibility: hidden;" /><p id="v1" style="visibility: hidden;"> V<sub>1</sub><br>
-  <input type="range" min="0" max="2" step="0.1" onchange="focus2()" value="0"  id="myrange1" style="visibility: hidden;"/><p id="v2" style="visibility: hidden;">V<sub>2</sub>
-  <input type="range" min="0" max="2" step="0.1" onchange="focus3()" value="0"  id="myrange2" style="visibility: hidden;"/><p id="v3" style="visibility: hidden;">V<sub>3</sub></p>
-  <input type="range" min="0" max="60" step="10"  onchange="focus5()" value="30"  id="myrange4"  style="visibility: hidden;"/><p id="v4" style="visibility: hidden;">R<sub>f</sub></p>
-  <input type="range" min="0" max="5" step="0.1" onchange="focus4()" value="0"  id="myrange3" style="visibility: hidden;"/>      
-      </fieldset> 
+            <div id="resistance4" draggable="true"> <img src="images/resistance3.png" id="res4" width="15px"height="45px" >
+              <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>1</sub></label-->
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>1</sub></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
+              <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label>  
+            </div>
 
-     
-        <div style="padding: 50px 100px">
-    
-        <canvas id="display" width="86" height="29" style="border: 1px #fff; background-color: #C7E5F0; visibility: hidden;"></canvas>
-        </div>
+             <div id="capacitor1" draggable="true"> 
+            <img src="images/capacitor1.png" id="cap1" width="35px"height="65px">
+            <label style="font-size: 18px;  color: blue; position: absolute; top: -32px;left:5px;">C<sub>1</sub></label> 
+            <label  style="font-size: 15px;  color: BLACK; position: absolute; top: 120px;left:-6px;"><b>C1</b></label>
+            <label  style="font-size: 15px;  color: BLACK; position: absolute; top: 120px;left:20px;"><b>A1</b></label>         
+           </div>
+
+   
+ 
+                      <div id="diode1" draggable="true"> 
+                      <img src="images/diode.png" id="di1" width="15px"height="45px">
+                       <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">D<sub>1</sub></label--> 
+                       <label  style="font-size: 18px;color: blue;position: absolute;top: 10px;left: -19px;">D<sub>1</sub></label>
+                       <label style="font-size: 15px;color: BLACK;position: absolute;top: -80px;left: 1px;"><B>C1</B></label>
+                       <label style="font-size: 15px;color: BLACK;position: absolute;top: 100px;left: 0px;"><B>A1</B></label> 
+                      </div>
+
+
+                     <div id="diode2" draggable="true"> 
+                    <img src="images/diode.png" id="di2" width="15px"height="45px">
+                    <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">D<sub>2</sub></label--> 
+                    <label  style="font-size: 18px;color: blue;position: absolute;top: 10px;left: -19px;">D<sub>2</sub></label>
+                    <label style="font-size: 15px;color: BLACK;position: absolute;top: -80px;left: 1px;"><B>C1</B></label>
+                    <label style="font-size: 15px;color: BLACK;position: absolute;top: 100px;left: 0px;"><B>A1</B></label>
+                  </div>
 
 
 
+      </div>
 
-<table id="mytable"  cellpadding="10px" border="5px"  style="visibility: hidden;">
-<tr style="background-color: #3c8dbc">
- <th>R<sub>1</sub> (KΩ)</th>
- <th>R<sub>2</sub> (KΩ)</th>
- <th>R<sub>3</sub> (KΩ)</th>
- <th>R<sub>f</sub> (KΩ)</th>
- <th>V<sub>1</sub> (V)</th>
- <th>V<sub>2</sub> (V)</th>
- <th>V<sub>3</sub> (V)</th>
- <th>V<sub>o</sub> (V)(Theoretical)</th>
- <th>V<sub>o</sub> (V)(Experimental)</th>
-  <th> % Error </th>
-</tr>
-</table>
+                     <div id="supply" draggable="true"></div>
+                     <div id="cro" draggable="true"></div>
 
-<table id="mytable1"  cellpadding="10px" border="5px"  style="visibility: hidden;">
-<tr style="background-color: #3c8dbc">
- <th>R<sub>1</sub> (KΩ)</th>
- <th>R<sub>2</sub> (KΩ)</th>
- <th>R<sub>f</sub> (KΩ)</th>
- <th>V<sub>1</sub> (V)</th>
- <th>V<sub>2</sub> (V)</th>
- <th>V<sub>o</sub> (V)(Theoretical)</th>
- <th>V<sub>o</sub> (V)(Experimental)</th>
- <th> % Error </th>
-</tr>
-</table>
-
-<table id="mytable2"  cellpadding="10px" border="5px"  style="visibility: hidden;">
-<tr style="background-color: #3c8dbc">
- <th>R<sub>1</sub> (KΩ)</th>
- <th>R<sub>f</sub> (KΩ)</th>
- <th>V<sub>1</sub> (V)</th>
- <th>V<sub>o</sub> (V)(Theoritical)</th>
- <th>V<sub>o</sub> (V)(Experimental)</th>
- <th> % Error </th>
-</tr>
-</table>
-
-<table id="mytable3"  cellpadding="10px" border="5px"  style="visibility: hidden;">
-<tr style="background-color: #3c8dbc">
- <th>R<sub>1</sub> (KΩ)</th>
- <th>R<sub>f</sub> (KΩ)</th>
-  <th>R<sub>f</sub>/R<sub>1</sub> </th>
- <th>V<sub>1</sub> (V)</th>
- <th>V<sub>o</sub>=(R<sub>F</sub>/R<sub>1</sub>)*V<sub>1</sub> (V) (Theoretical) </th>
- <th>V<sub>o</sub> (V)(Experimental)</th>
- <th> % Error </th>
-</tr>
-</table>
-</div> 
-
-<script src="js/script.js"></script>
+                     <div class="bottom">
+                     <button id="checkbutton" onclick="checkCircuit()"  disabled>Check Connection</button>
+                     <button id="startbutton" onclick="myfun();" disabled>Show wave</button>
+                     <button id="resetbutton" onclick="resetCircuit();"disabled>Reset Connections</button>
+                     <button id="addtable"  onclick="addtable();"  disabled> <b>Show result</b></button>
+                     </div>
 </div>
-<footer><b>&copy;</b> Copyright 2022 Virtual Labs, IIT Roorkee</footer>
 
+</div>
+    
+<div class="right">        
+
+<button class="right_btn" id="First">Instructions</button>
+<div class="Button-data" id="First_Data" >
+  <div class="panel">
+      <button class="close-btn" id="close-btn"><span>&#10005</span></button>
+    
+      <ol type="1" style="padding: 10px;">
+          <li>Click on the component button to place the component on the table.</li>               
+          <li>Make connections as per the circuit diagram.</li>
+          <figure>
+            <img src="images/image1ins.png" style="height: 300px;width:300px">
+            <figcaption style="text-align:center;">Fig. Circuit Diagram of sawtooth wave generator</figcaption>
+          </figure><br/>
+          <li>Connect output of the circuit to channel CH1 of C.R.O.</li>
+          <li>Click on <b>'Check Connection'</b> button to check connections. If correct, Click on <b>'Show wave'</b> button to view the output waveform and adjust the C.R.O.</li>
+          <li>Measure the frequency of generated sawtooth wave from C.R.O.</li>
+      <li> Calculate the frequency of output wave using the formula:<br><center><b>f = (1/(2*C1*(R3+R4)))*(R2/R1)</b></center></li>
+      <li>Compare the calculated frequency with the experimentally measured frequency by clicking on <b>'Show result'</b> button. Enter experimentally measured frequency.</li>
+          </ol>
+          </div> </div>
+        <fieldset class="components" id="Components" >
+                        <legend><b style="font-size: 20">Components</b></legend>    
+         
+                        <button id="breadbutton" onclick="breadboard()" >Breadboard</button><br>
+                        <button id="supplybutton" onclick="supply()">±15V DC Power Supply</button><br>
+                        <button id="switchbutton" onclick="cro1();">C.R.O.</button><br>
+                        <button id="ic2button" onclick="ic741(); ic7411();" >IC-741</button><br>
+                        <button id="resistancebutton" onclick="resistor1(); resistor2();resistor3();resistor4();" >Resistors</button></br>
+                        <button id="diodes" onclick="diode1();diode2(); " >Diodes</button><br>
+                        <button id="capacitor" onclick="capacitor(); " >0.1μF Capacitor</button><br>
+     
+         </fieldset> </div>
+         <img src="images/verticals.png" id="vertical" width="20" height="30" >
+               <img src="images/horizontals.png" id="horizontal"  width="30" height="20"> 
+            
+                
+    
+               <div id="mytable" style="visibility: hidden;">Experimental frequency : <span id="p"></span></div>
+               <div id="mytable1" style="visibility: hidden;">Theoretical frequency : <span id="q"></span></div>
+
+<div id="mydiv" style="margin: auto; position: absolute;left: 110px; top: 40px; visibility: hidden;" >
+        <canvas id="canvas" width="400" height="290" style="position: absolute; top: 70px; left:480px; z-index: 2; ">
+        </canvas>
+            <img src="images\CROscreen.png" width="400" height="290"  id="img" style="position: absolute; z-index: 1;top: 70px; left:480px; ">
+      
+         
+     
+
+           <div id="knobs" style=" width: 400px; height: 230px; position: absolute; top: 357px; left: 480px; padding-left: -19px; ">
+         <input id="position-rotate"
+         name="rotate"
+         type="range"
+         value="-54"
+         min="-300" max="200"
+         style="visibility: hidden;" 
+         
+         data-angle-start="0"
+         data-angle-end="360"
+         data-indicator-auto-position="true"
+         data-indicator-auto-rotate="true"
+         data-indicator-radius="14"
+          />
+
+         <input id="rotate"
+         name="rotate"
+         type="range"
+         value="50"
+         min="-150" max="244"
+         style="visibility: hidden;" 
+         
+         data-angle-start="0"
+         data-angle-end="360"
+         data-indicator-auto-position="true"
+         data-indicator-auto-rotate="true"
+         data-indicator-radius="14"
+          />
+          <button id="stopbutton" onclick="init1();" style="position: absolute;margin-left: 160px; margin-top: 18px;">STOP</button>
+        
+     <br><br>
+        <ul class="row">
+   
+        <li class="column">
+        <input class="preset1" type="range"  id="ch1" min="-15" max="15" data-width="140" data-height="140" data-angleOffset="220"
+               data-angleRange="280" step="5"/>
+       
+        <code style="font-weight: bolder;">mV/div&nbsp;&nbsp;CH1&nbsp;&nbsp;V/div</code>
+         </li>
+         <li class="column">
+         <input class="preset1" type="range" min="0" max="60"  id="time" value="0" data-width="140" data-height="140" data-angleOffset="220"
+               data-angleRange="280" step="10"/>
+         <code style="font-weight: bolder;">TIME(ms/div)</code>
+         </li>
+         </ul>
+         </div>
+  </div> 
+    
+ <script type="text/javascript">
+
+   
+
+    for (var i = 1; i < 3; i++) {
+        Array.prototype.slice.call(document.getElementsByClassName('preset' + i)).forEach(function(el) {
+            new Knob1(el, new Ui['P' + i]());
+            el.addEventListener('change', function  () {
+              console.log(el.value)
+            })
+        })
+    }
+
+ 
+    var Arcxample = function() {};
+
+    Arcxample.prototype = Object.create(Ui.prototype);
+
+    Arcxample.prototype.createElement = function() {
+
+        Ui.prototype.createElement.apply(this, arguments);
+        this.addComponent(new Ui.Arc({
+            arcWidth: this.width / 10
+        }));
+        this.el.node.setAttribute("class", "arcExample");
+    };
+    new Knob1(document.getElementsByClassName('arcExample')[0], new Arcxample());
+
+</script>
+
+
+
+  <!-- mouse/touch events --><!-- Custom rendering code -->
+  <script type="text/javascript">
+ 
+  var createKnobCSS = function(knob, id) {
+    var $input     = $(knob.element),
+        $container = $('<div class="container '+ id + '">'),
+
+        $body      = $('<div class="ui-knob  '+ id + '">'),
+        $indicator = $('<div class="ui-indicator '+ id + '">');
+
+    $container.append($body);
+    $container.append($indicator);
+
+    // $input.hide();
+    $container.insertBefore($input);
+    $container.append($input);
+
+    $body.css({
+      "margin-top": -($body.outerHeight()/2),
+      "margin-left":-($body.outerWidth()/2)
+    });
+
+    setupKnob(knob, $container[0]);
+
+  }
+
+
+  var drawKnobCSS = function(knob, indicator) {
+    var $indicator = $(knob.element).siblings('.ui-indicator');
+    $indicator.css({
+      left: indicator.x - $indicator.outerWidth()/2,
+      top:  indicator.y - $indicator.outerHeight()/2
+    });
+
+
+  }
+ var positionRotateKnob = new Knob(document.getElementById('position-rotate'),
+    function(knob, indicator) {
+      drawKnobCSS(knob, indicator);
+    }
+  );
+  createKnobCSS(positionRotateKnob, 'position-rotate');
+
+
+
+  </script>
+
+<script type="text/javascript">
+
+  var createKnobCSS = function(knob, id) {
+    var $input     = $(knob.element),
+        $container1 = $('<div class="container1 '+ id + '">'),
+
+        $body      = $('<div class="ui-knob  '+ id + '">'),
+        $indicator = $('<div class="ui-indicator '+ id + '">');
+
+    $container1.append($body);
+    $container1.append($indicator);
+
+    // $input.hide();
+    $container1.insertBefore($input);
+    $container1.append($input);
+
+    $body.css({
+      "margin-top": -($body.outerHeight()/2),
+      "margin-left":-($body.outerWidth()/2)
+    });
+
+    setupKnob(knob, $container1[0]);
+
+  }
+
+
+  var drawKnobCSS = function(knob, indicator) {
+    var $indicator = $(knob.element).siblings('.ui-indicator');
+    $indicator.css({
+      left: indicator.x - $indicator.outerWidth()/2,
+      top:  indicator.y - $indicator.outerHeight()/2
+    });
+
+
+  }
+
+var rotateKnob = new Knob(document.getElementById('rotate'),
+    function(knob, indicator) {
+      drawKnobCSS(knob, indicator);
+    }
+  );
+  createKnobCSS(rotateKnob, 'rotate');
+
+
+  </script>
+<script>
+  const First = document.getElementById('First');
+const close_btn = document.getElementById('close-btn');
+const First_data = document.getElementById('First_Data');
+
+First.addEventListener('click', () => {
+    First_data.classList.toggle('visible')
+});
+
+close_btn.addEventListener('click', () => {
+    First_data.classList.remove('visible')
+});
+</script>
+<svg>
+    <filter id="dropshadow" height="150%" width="150%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+        <feOffset dx="0" dy="3" result="offsetblur"/>
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+        
+</svg>
+       
+</div>
+  
+  
+   <script src="js/script1.js"></script>
+ 
+
+   <div id="copyright">
+    <h5>&copy; Copyright 2022 Virtual Labs, IIT Roorkee</h5>
+</div>
 </body>
+
 </html>
