@@ -27,18 +27,19 @@
 .Button-data {
     position: fixed;
     right: 0;
-    bottom: 50px;
+bottom: 10px;
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
     overflow: hidden;
+    z-index:999;
 }
 
 .Button-data.visible {
     transform: translateX(-10px);
 }
 .panel {
-    right:5px;
-    padding: 40px 0px 10px 20px;
+    text-align: justify;
+    padding: 20px 10px 10px 20px;
     background-color: #fff;
     border-radius: 16px;
     border: 1px solid black;
@@ -50,9 +51,7 @@
     height: auto;
     width: 320px;
     max-width: calc(100% - 10px);
-    z-index: 20;
-    text-align: justify;
-    font-size: 13px;
+     
 }
 
 .img {
@@ -83,6 +82,9 @@
 .panel button.close-btn:focus {
     outline: none;
 }
+li::marker{
+    font-weight: bolder;
+}
 h1 {
     font-family: sans-serif;
     font-size: 42px;
@@ -90,7 +92,7 @@ h1 {
     margin-top: 10px;
 }
 #simulation {
-    height: 590px;
+    height: 700px;
     width: 1518px;
     display: inline-block;
 }
@@ -99,15 +101,14 @@ h1 {
     padding-top: 20px;
     margin-left: 20px;
     float: left;
-    width: 1000px;
+    width: 1005px;
     height: 700px;
     display: block;
 }
 #mid {
     position: absolute;
     height: 610px;
-    width: 1008px;
-  
+    width: 1008px; 
     box-shadow: 2px 4px 6px #262626;
     border-radius: 4px;
     background-color: #f2f2f2;
@@ -189,55 +190,19 @@ h1 {
 /* Right Components Code here */
 
 .right {
-    z-index:-1;
+   
     margin-top: 20px;
     margin-right: 20px;
     float: right;
     border-radius: 5px;
     background: rgb(220, 221, 148);
     width: 410px;
-    height: 680px;
+    height: 670px;
     text-align: center;
     display: block;
 }
 
-#instruction:hover {
-    background-color: #ffffff;
-    color: #5433FF;
-}
-    #instruction
 
-    {    position:absolute;
-        top:90px;
-        left: 1210px; 
-        position: absolute;
-        width:150px;
-        height:30px;
-        color: #fff;
-        background: #5433FF;
-        border: 2px solid #5433ff;
-        border-radius: 6px;
-        font-size: 16px;
-        z-index:1; 
-    }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  margin-left:920px;
-  margin-top: 50px;
-  background-color: #fff;
-  width: 410px;
-  height: 610px;
-  border:4px;
-  border-radius: 4px;
-  font-size: 15px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,1,1);
-  z-index: 81;
-  overflow: auto;
-  padding: 10px;
-}
-.dropdown-content a:hover {background-color: #ddd}
 .show {display:block;}
 a
 {
@@ -255,7 +220,7 @@ a
     box-shadow: 0 16px 22px -17px #03153B;
     color: #fff;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 45px;
     border-radius: 20px;
 }
 
@@ -265,7 +230,7 @@ a
 }
 
 .components                                            /*      fieldset position  */
-{   position: absolute;
+{  
     display: inline-block;
     box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
     background: rgb(243, 236, 236);
@@ -273,7 +238,8 @@ a
     width:300px;
     height:450px;
     border-radius: 5px;
-    top:130px;
+    top:160px;
+    margin-top: 40px;
     left:1133px;
     font-size: 20px;
     font-family: sans-serif;
@@ -285,7 +251,6 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px;
-    position: absolute;
     margin-top: 25px;
     left:80px;
     color: #fff;
@@ -304,8 +269,7 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px;
-    position: absolute;
-    margin-top: 75px;
+    margin-top: 5px;
     left:80px;
     color: #fff;
 }
@@ -322,8 +286,7 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px;
-    position: absolute;
-    margin-top: 35px;
+    margin-top: 5px;
     left:80px;
     color: #fff;
 }
@@ -339,8 +302,8 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px;
-    position: absolute;
-    margin-top: 65px;
+
+    margin-top: 5px;
     left:80px;
     color: #fff;
 }
@@ -356,8 +319,8 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px; 
-    position: absolute;
-    margin-top: 85px;
+
+    margin-top: 5px;
     left:80px;
     color: #fff;
 }
@@ -374,8 +337,8 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px; 
-    position: absolute;
-    margin-top: 95px;
+
+    margin-top: 5px;
     left:80px;
     color: #fff;
 }
@@ -391,8 +354,8 @@ a
     background: #5433FF;
     border: 2px solid #5433ff;
     border-radius: 10px; 
-    position: absolute;
-    margin-top: 105px;
+
+    margin-top: 5px;
     left:80px;
     color: #fff;
 }
@@ -403,54 +366,57 @@ a
 
 }
 
-
-#checkbutton                                      /*      check connections buttton  */
-{   width: 130px;
-    height:52px;
-    border: 2px rgb(0, 168, 8) solid;
-    background: rgb(0, 168, 8);
-    border-radius: 10px;
+.bottom {
     position: absolute;
-    top:680px;
-    left:100px;
-    font-weight: bolder;
+
+    height: 60px;
+    text-align: center;
+    top:615px;
+    width:1008px;
 }
 
+.bottom button {
+    margin: 10px 10px 10px 10px;
+    height: 40px;
+    width: 170px;
+    font-size: 15px;
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    border-color: black;
+    
+}
+
+#checkbutton                                      /*      check connections buttton  */
+{  
+    border: 2px rgb(0, 168, 8) solid;
+    background: rgb(0, 168, 8);
+    font-weight: bolder;
+}
 #checkbutton:hover                                  
 {
     color: rgb(0, 168, 8);
     background: white;
-    font-size: 18px;
+    font-size: 16px;
 
 }
 #startbutton                                          /*      start button   */
-{   width: 130px;
-    height:52px;
-    border: 2px rgb(0, 168, 8) solid;
-    background: rgb(0, 168, 8);
-    border-radius: 10px;
-    position: absolute;
-    top: 680px;
-    left: 400px;
+{  border: 2px #5433FF solid;
+    background: #5433FF;
     font-weight: bolder;
-
 }
 #startbutton:hover
 {
-    color: rgb(0, 168, 8);
+    color: #5433FF;
     background: white;
-    font-size: 18px;
+    font-size: 16px;
 
 }
+
 #resetbutton                           /*reset button*/
-{   width: 130px;
-    height:52px;
-    border: 2px rgb(255, 54, 54) solid;
-    background: rgb(255, 54, 54);
-    border-radius: 10px;
-    position: absolute;
-    top: 680px;
-    left: 250px;
+{  border: 2px rgb(255, 54, 54) solid;
+    background: rgb(255, 54, 54);    
     font-weight: bolder;
 
 }
@@ -458,28 +424,24 @@ a
 {
     color: rgb(255, 54, 54);
     background: white;
-    font-size: 18px;
+    font-size: 16px;
 
 }
 #addtable                          /*reset button*/
-{   width: 130px;
-    height:52px;
-    border: 2px rgb(255, 54, 54) solid;
-    background: rgb(255, 54, 54);
-    border-radius: 10px;
-    position: absolute;
-    top:680px;
-    left: 550px;
-    font-size: 18px;
+{ border: 2px yellowgreen solid;
+    background: yellowgreen;
+    font-weight: bolder;
 
 }
 #addtable:hover 
 {
-    color: rgb(255, 54, 54);
+    
+    color: yellowgreen;
     background: white;
     font-size: 18px;
 
 }
+
 
 h3
 {
@@ -497,12 +459,7 @@ button
     cursor: pointer;
     font-family: serif;
 }
-footer
-{
-    position: absolute;
-    top:940px;
-    left:20px;
-    font-size: 18px;}
+
 u
 {
     font-family: sans-serif;
@@ -675,7 +632,7 @@ padding: 4px;
 #mytable
 {
   position: absolute; 
-  top: 100px;
+  top: 80px;
   left: 40px;
   font-weight: bolder;
   font-size: 18px;
@@ -683,15 +640,17 @@ padding: 4px;
 #mytable1
 {
   position: absolute; 
-  top: 130px;
+  top: 110px;
   left: 40px;
   font-weight: bolder;
   font-size: 18px;
 }
 #copyright {
+    position: absolute; 
+    top:745px;
     width: 1518px;
     height: 30px;
-    font-size: 15px;
+    font-size: 18px;
     padding-top: 10px;
     text-align: center;
     color: #fff;

@@ -354,24 +354,7 @@
     <h2>Generation of Sawtooth wave using Op-Amp</h2>
 </div>
    
-<!--div class="dropdown" >             
-          <button id="instruction" onclick="myFunction()"  class="dropbtn">INSTRUCTIONS</button>
-<div id="myDropdown" class="dropdown-content">
-	<b>1.</b> Click on the component button to place the component on the table.<br>
-	<b>2.</b> Make connections as per the circuit diagram.<br><br>
-	<center><img src="images/image1ins.png" height="250px" width="400px"></center>
-	<center><b> Fig: Circuit diagram of sawtooth wave generator</b></center><br>
-	<b>3.</b> Connect output of the circuit to channel CH1 of C.R.O.<br>
-	<b>4.</b> Click on <b>'Check'</b> button to check connections. If correct, Click on <b>'Show wave'</b> button to view the output waveform and adjust the C.R.O.<br>
-	<b>5.</b> Measure the frequency of generated sawtooth wave from C.R.O.<br>
-	<b>6.</b> Calculate the frequency of output wave using the formula:<br><center><b>f = (1/(2*C1*(R3+R4)))*(R2/R1)</b></center><br>
-	<b>7.</b> Compare the calculated frequency with the experimentally measured frequency by clicking on <b>'Show result'</b> button. Enter experimentally measured frequency.<br>
-	
 
-
-
-</div>
-</div-->
 <div id="simulation">
 <div class="left">
   <div class="border" id="mid">
@@ -379,7 +362,7 @@
       <div id="board">
                       
            <div class="ic" id="ic741" draggable="true" ><img src="images/ic.png" id="ic1" width="55px"height="45px" style="margin-top: 50px;">
-            <label  style="font-size: 18px;color: red;position: absolute;top: 60px;left: -24px;">IC<sub>1</sub></label>
+            <label  style="font-size: 18px;color: blue;position: absolute;top: 60px;left: -24px;">IC<sub>1</sub></label>
             <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:3px;"><b>1</b></label>  
             <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:17px;"><b>2</b></label>   
             <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:32px;"><b>3</b></label>      
@@ -391,7 +374,7 @@
           </div>
 
            <div class="ic3" id="ic7411" draggable="true" ><img src="images/ic.png" id="ic2" width="55px"height="45px" style="margin-top: 50px;">
-            <label  style="font-size: 18px;color: red;position: absolute;top: 60px;left: -24px;">IC<sub>2</sub></label>
+            <label  style="font-size: 18px;color: blue;position: absolute;top: 60px;left: -24px;">IC<sub>2</sub></label>
             <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:3px;"><b>1</b></label>  
             <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:17px;"><b>2</b></label>   
             <label style="font-size: 15px;  color: black; position: absolute; top: 157px;left:32px;"><b>3</b></label>      
@@ -405,14 +388,14 @@
                      
             <div id="resistance1" draggable="true"> <img src="images/resistance1.png" id="res1" width="15px"height="45px" >
               <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>3</sub></label--> 
-              <label  style="font-size: 18px;color: red;position: absolute;top: 15px;left: -16px;">R<sub>3</sub></label>
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>3</sub></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label>
             </div>
 
             <div id="resistance2" draggable="true"> <img src="images/resistance3.png" id="res2" width="15px"height="45px" > 
               <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>4</sub></label-->
-              <label  style="font-size: 18px;color: red;position: absolute;top: 15px;left: -16px;">R<sub>4</sub></label>
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>4</sub></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label>
             </div>
@@ -420,21 +403,21 @@
 
             <div id="resistance3" draggable="true"> <img src="images/resistance2.png" id="res3"  width="15px"height="45px"> 
               <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>2</sub></label-->
-              <label  style="font-size: 18px;color: red;position: absolute;top: 15px;left: -16px;">R<sub>2</sub></label>
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>2</sub></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label> 
             </div>
 
             <div id="resistance4" draggable="true"> <img src="images/resistance3.png" id="res4" width="15px"height="45px" >
               <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">R<sub>1</sub></label-->
-              <label  style="font-size: 18px;color: red;position: absolute;top: 15px;left: -16px;">R<sub>1</sub></label>
+              <label  style="font-size: 18px;color: blue;position: absolute;top: 15px;left: -16px;">R<sub>1</sub></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: -74px;left: 1px;"><B>C1</B></label>
               <label style="font-size: 15px;color: BLACK;position: absolute;top: 106px;left: 0px;"><B>A1</B></label>  
             </div>
 
              <div id="capacitor1" draggable="true"> 
             <img src="images/capacitor1.png" id="cap1" width="35px"height="65px">
-            <label style="font-size: 18px;  color: red; position: absolute; top: -32px;left:5px;">C<sub>1</sub></label> 
+            <label style="font-size: 18px;  color: blue; position: absolute; top: -32px;left:5px;">C<sub>1</sub></label> 
             <label  style="font-size: 15px;  color: BLACK; position: absolute; top: 120px;left:-6px;"><b>C1</b></label>
             <label  style="font-size: 15px;  color: BLACK; position: absolute; top: 120px;left:20px;"><b>A1</b></label>         
            </div>
@@ -444,7 +427,7 @@
                       <div id="diode1" draggable="true"> 
                       <img src="images/diode.png" id="di1" width="15px"height="45px">
                        <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">D<sub>1</sub></label--> 
-                       <label  style="font-size: 18px;color: red;position: absolute;top: 10px;left: -19px;">D<sub>1</sub></label>
+                       <label  style="font-size: 18px;color: blue;position: absolute;top: 10px;left: -19px;">D<sub>1</sub></label>
                        <label style="font-size: 15px;color: BLACK;position: absolute;top: -80px;left: 1px;"><B>C1</B></label>
                        <label style="font-size: 15px;color: BLACK;position: absolute;top: 100px;left: 0px;"><B>A1</B></label> 
                       </div>
@@ -453,7 +436,7 @@
                      <div id="diode2" draggable="true"> 
                     <img src="images/diode.png" id="di2" width="15px"height="45px">
                     <!--label style="font-size: 18px;  color: red; position: absolute; top: -82px;left:1px;">D<sub>2</sub></label--> 
-                    <label  style="font-size: 18px;color: red;position: absolute;top: 10px;left: -19px;">D<sub>2</sub></label>
+                    <label  style="font-size: 18px;color: blue;position: absolute;top: 10px;left: -19px;">D<sub>2</sub></label>
                     <label style="font-size: 15px;color: BLACK;position: absolute;top: -80px;left: 1px;"><B>C1</B></label>
                     <label style="font-size: 15px;color: BLACK;position: absolute;top: 100px;left: 0px;"><B>A1</B></label>
                   </div>
@@ -464,34 +447,25 @@
 
                      <div id="supply" draggable="true"></div>
                      <div id="cro" draggable="true"></div>
-   
 
+                     <div class="bottom">
+                     <button id="checkbutton" onclick="checkCircuit()"  disabled>Check Connection</button>
+                     <button id="startbutton" onclick="myfun();" disabled>Show wave</button>
+                     <button id="resetbutton" onclick="resetCircuit();"disabled>Reset Connections</button>
+                     <button id="addtable"  onclick="addtable();"  disabled> <b>Show result</b></button>
+                     </div>
 </div>
 
 </div>
     
 <div class="right">        
-<!--div class="dropdown" >             
-          <button id="instruction" onclick="myFunction()"  class="dropbtn">INSTRUCTIONS</button>
-<div id="myDropdown" class="dropdown-content">
-	<b>1.</b> Click on the component button to place the component on the table.<br>
-	<b>2.</b> Make connections as per the circuit diagram.<br><br>
-	<center><img src="images/image1ins.png" height="250px" width="400px"></center>
-	<center><b> Fig: Circuit diagram of sawtooth wave generator</b></center><br>
-	<b>3.</b> Connect output of the circuit to channel CH1 of C.R.O.<br>
-	<b>4.</b> Click on <b>'Check'</b> button to check connections. If correct, Click on <b>'Show wave'</b> button to view the output waveform and adjust the C.R.O.<br>
-	<b>5.</b> Measure the frequency of generated sawtooth wave from C.R.O.<br>
-	<b>6.</b> Calculate the frequency of output wave using the formula:<br><center><b>f = (1/(2*C1*(R3+R4)))*(R2/R1)</b></center><br>
-	<b>7.</b> Compare the calculated frequency with the experimentally measured frequency by clicking on <b>'Show result'</b> button. Enter experimentally measured frequency.<br>
 
-</div>
-</div-->
-<button class="right_btn" id="First">INSTRUCTIONS</button>
+<button class="right_btn" id="First">Instructions</button>
 <div class="Button-data" id="First_Data" >
   <div class="panel">
       <button class="close-btn" id="close-btn"><span>&#10005</span></button>
     
-      <ol type="1" style="padding: 10px; text-align: left;">
+      <ol type="1" style="padding: 10px;">
           <li>Click on the component button to place the component on the table.</li>               
           <li>Make connections as per the circuit diagram.</li>
           <figure>
@@ -499,7 +473,7 @@
             <figcaption style="text-align:center;">Fig. Circuit Diagram of sawtooth wave generator</figcaption>
           </figure><br/>
           <li>Connect output of the circuit to channel CH1 of C.R.O.</li>
-          <li>Click on <b>'Check'</b> button to check connections. If correct, Click on <b>'Show wave'</b> button to view the output waveform and adjust the C.R.O.</li>
+          <li>Click on <b>'Check Connection'</b> button to check connections. If correct, Click on <b>'Show wave'</b> button to view the output waveform and adjust the C.R.O.</li>
           <li>Measure the frequency of generated sawtooth wave from C.R.O.</li>
       <li> Calculate the frequency of output wave using the formula:<br><center><b>f = (1/(2*C1*(R3+R4)))*(R2/R1)</b></center></li>
       <li>Compare the calculated frequency with the experimentally measured frequency by clicking on <b>'Show result'</b> button. Enter experimentally measured frequency.</li>
@@ -515,16 +489,11 @@
                         <button id="resistancebutton" onclick="resistor1(); resistor2();resistor3();resistor4();" >Resistors</button></br>
                         <button id="diodes" onclick="diode1();diode2(); " >Diodes</button><br>
                         <button id="capacitor" onclick="capacitor(); " >0.1μF Capacitor</button><br>
-            
-
      
          </fieldset> </div>
          <img src="images/verticals.png" id="vertical" width="20" height="30" >
                <img src="images/horizontals.png" id="horizontal"  width="30" height="20"> 
-               <button id="checkbutton" onclick="checkCircuit()"  disabled>Check</button><br>
-               <button id="startbutton" onclick="myfun();" disabled>Show wave</button><br>
-               <button id="resetbutton" onclick="resetCircuit();"disabled>Reset<br>Connections</button>
-               <button id="addtable"  onclick="addtable();"  disabled> <b>Show result</b></button>
+            
                 
     
                <div id="mytable" style="visibility: hidden;">Experimental frequency : <span id="p"></span></div>
