@@ -1,13 +1,25 @@
 
 var isstartedsimulation=false;
 
+const check_button = document.getElementById('checkbutton');
+const reset_button = document.getElementById('resetbutton');
 
+const bread_but=document.getElementById("breadbutton");
+const supply_but=document.getElementById("supplybutton");
+const switch_but=document.getElementById("switchbutton");
+const ic_but=document.getElementById("ic2button");
+const r1_but=document.getElementById("resistancebutton");
+const diode_but=document.getElementById("diodes");
+const cap_but=document.getElementById("capacitor");
 
 
 // Components hide show code here
 function breadboard() {
     var x = document.getElementById("board");
     x.style.visibility = "visible";
+
+    bread_but.disabled=true;
+    bread_but.style.cursor="not-allowed";
 
     var instance = new BoardController();
 
@@ -243,6 +255,9 @@ function ic741() {
     var x = document.getElementById("ic741");
     x.style.visibility = "visible";
 
+    ic_but.disabled=true;
+    ic_but.style.cursor="not-allowed";
+
     var ic741 = new BoardController();
     ic741.setJsPlumbInstance(jsPlumb);
     ic741.setCircuitContainer('mid');
@@ -301,6 +316,9 @@ function ic741() {
 function ic7411() {
     var x = document.getElementById("ic7411");
     x.style.visibility = "visible";
+
+    ic_but.disabled=true;
+    ic_but.style.cursor="not-allowed";
 
     var ic7411 = new BoardController();
     ic7411.setJsPlumbInstance(jsPlumb);
@@ -361,6 +379,9 @@ function supply() {
     var x = document.getElementById("supply");
     x.style.visibility = "visible";
     
+    supply_but.disabled=true;
+    supply_but.style.cursor="not-allowed";
+
     var supply = new BoardController();
     supply.setJsPlumbInstance(jsPlumb);
     supply.setCircuitContainer('mid');
@@ -377,6 +398,10 @@ function supply() {
 function resistor1() {
     var x = document.getElementById("resistance1");
     x.style.visibility = "visible";
+
+    r1_but.disabled=true;
+    r1_but.style.cursor="not-allowed";
+
     var resistance1= new BoardController();
     resistance1.setJsPlumbInstance(jsPlumb);
     resistance1.setCircuitContainer('mid');
@@ -460,6 +485,10 @@ function resistor4() {
 function capacitor() {
 var a=document.getElementById("capacitor1");
 a.style.visibility="visible";
+
+cap_but.disabled=true;
+cap_but.style.cursor="not-allowed";
+
     var capacitor1= new BoardController();
    capacitor1.setJsPlumbInstance(jsPlumb);
    capacitor1.setCircuitContainer('mid');
@@ -481,6 +510,10 @@ a.style.visibility="visible";
 function diode1() {
     var x = document.getElementById("diode1");
     x.style.visibility = "visible";
+
+    diode_but.disabled=true;
+    diode_but.style.cursor="not-allowed";
+
     var diode1= new BoardController();
     diode1.setJsPlumbInstance(jsPlumb);
     diode1.setCircuitContainer('mid');
@@ -523,12 +556,30 @@ function diode2() {
 function cro1() {
     var x = document.getElementById("cro");
     x.style.visibility = "visible";
+
+    switch_but.disabled=true;
+    switch_but.style.cursor="not-allowed";
+
     var cro= new BoardController();
     cro.setJsPlumbInstance(jsPlumb);
     cro.setCircuitContainer('mid');
     
     cro.addEndPoint('black',6,1, 'cro', 'cro_C1', 'cro_C101', [0, 0, 0, 0, 172, 155], 'black');
 
+}
+
+function disabledButton()
+{
+
+    
+
+  if(window.getComputedStyle(document.getElementById('board')).visibility === "visible" && window.getComputedStyle(document.getElementById('cro')).visibility === "visible" && 
+   window.getComputedStyle(document.getElementById('diode1')).visibility === "visible" && window.getComputedStyle(document.getElementById('supply')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('capacitor1')).visibility === "visible" && window.getComputedStyle(document.getElementById('resistance1')).visibility === "visible" && window.getComputedStyle(document.getElementById('ic741')).visibility === "visible" )
+  {
+   
+  check_button.disabled=false; 
+  }
 }
 
 function myFunction() {

@@ -83,18 +83,12 @@ D     V<sub>O</sub>(pp) = – V<sub>Ramp</sub> – (+ V<sub>Ramp</sub>)
 <br>
 
   
-Q10. Consider the differentiator for which the input and output signals are given in list 1 and list 2 respectively. Match the input wave to the corresponding output wave.  
+Q10. The output of integrator is a Triangular Wave Generator Using Op amp if its input is a _______________.
 
-List 1 | List 2
--------|--------
-1\. Triangular Wave|i. Cosine Wave
-2\. Square Wave|ii. Square Wave
-3\. Sine Wave|iii. Spikes
-
-A     1-iii, 2-i, 3-ii  
-B     1-i, 2-ii, 3-iii  
-C     1-i, 2-iii, 3-ii  
-<b>D     1-ii, 2-iii, 3-i</b>  
+A     Cosine Wave   
+<b>B     Square Wave</b>  
+C     Spikes  
+D     None of the above 
 
  
 

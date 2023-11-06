@@ -27,10 +27,11 @@
 .Button-data {
     position: fixed;
     right: 0;
-bottom: 10px;
+    top:15px;
+
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
-    overflow: hidden;
+    overflow: scroll;
     z-index:999;
 }
 
@@ -375,6 +376,11 @@ a
     width:1008px;
 }
 
+button:disabled
+{
+    cursor: not-allowed;
+    opacity: 0.6;
+}
 .bottom button {
     margin: 10px 10px 10px 10px;
     height: 40px;
@@ -383,9 +389,8 @@ a
     border: none;
     font-weight: bold;
     border-radius: 25px;
-    cursor: pointer;
     border-color: black;
-    
+    color: white;
 }
 
 #checkbutton                                      /*      check connections buttton  */
