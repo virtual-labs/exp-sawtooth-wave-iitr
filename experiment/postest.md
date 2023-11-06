@@ -20,19 +20,15 @@ D  Voltage follower
 <br>
   
   
-Q3. Consider the integrator used for generating sawtooth wave form. Match the list I with the list II depending on the movement of wiper.  
+Q3. Consider the integrator used for generating sawtooth wave form. Select the option depending on the movement of wiper.  
   
 
-|List I | List II|
-| :-------: |  :-------: |
-![](images/que3(a).png) | Rise time = Fall time (Triangular wave)
-![](images/que3(b).png) | Longer fall time and short rise time (Sawtooth wave)
-![](images/que3(c).png) | Longer rise time and short fall time (Sawtooth wave)
+![](images/que3(a).png) 
 
-A  1-iii, 2-ii, 3-i  
-B  1-i, 2-ii, 3-iii  
-<b>C  1-i, 2-iii, 3-ii</b>  
-D  1-ii, 2-iii, 3-i  
+<b>A  Rise time = Fall time (Triangular wave)</b>  
+B  Longer fall time and short rise time (Sawtooth wave)  
+C  Longer rise time and short fall time (Sawtooth wave)  
+D  None of the above  
 <br>
   
 

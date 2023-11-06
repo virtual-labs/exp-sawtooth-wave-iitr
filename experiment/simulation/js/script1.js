@@ -192,6 +192,15 @@ function checkCircuit() {
    
 console.log("###noofedges->"+g.numberofedges);
 
+var edges= (g.numberofedges);
+console.log('edges:'+edges)
+if(edges == 0)
+{
+    alert("No connections present.");   
+    return;
+}
+
+
         if(g.isConnected("VCC","ic741_7"))
                 {
                 console.log("IC 741 connected to supply");
