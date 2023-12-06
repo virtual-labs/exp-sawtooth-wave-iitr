@@ -1,7 +1,7 @@
 ## Procedure<br>
 #### Familiarise with components
 
-**1.** Click on the component button to place the component on the table. 
+**1.** Click on the components button to place the component on the table. 
 <div style="text-align:center">   
 
 ![](images/board.png "breadbord")&emsp; ![](images/supply.png "Power Supply")&emsp; ![](images/r1.png "100KΩResistor")&emsp; ![](images/r2.png "120KΩResistor")&emsp; ![](images/r3.png "5.6KΩResistor")&emsp; ![](images/r4.png "100KΩResistor")  ![](images/IC1.png "IC1")&emsp; ![](images/IC1.png "IC2")&emsp; ![](images/capacitor.png "Capacitor")&emsp; ![](images/cro.png "CRO")&emsp; ![](images/diode1.png "Diode(D1)")&emsp; ![](images/diode2.png "Diode(D2)")&emsp;

@@ -92,6 +92,6 @@ The circuit for generating sawtooth wave using Op-Amp 741 where, R<sub>3</sub> <
 Frequency of the generated sawtooth wave can be calculated by -
 <div style="text-align:center">
 
-**f** =(1 / 2C<sub>1</sub>(R<sub>3</sub>+R<sub>4</sub>)) × (R<sub>2</sub> / R<sub>1</sub>) </div>
+**f = (1 / 2C<sub>1</sub>(R<sub>3</sub>+R<sub>4</sub>)) × (R<sub>2</sub> / R<sub>1</sub>)** </div>
 
 </div>
