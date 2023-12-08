@@ -13,10 +13,10 @@ D     Square waveform
 
 Q2. How a triangular wave generator is derived from square wave generator?  
 
-A     Connect oscillator at the output.  
-B     Connect voltage follower at output.  
-C     Connect differentiator at the output.  
-<b>D     Connect integrator at the output.</b>  
+A     Connect oscillator at the output 
+B     Connect voltage follower at output  
+C     Connect differentiator at the output  
+<b>D     Connect integrator at the output</b>  
 <br>
 
 
