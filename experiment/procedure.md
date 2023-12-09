@@ -1,4 +1,4 @@
-## Procedure<br>
+
 #### Familiarise with components
 
 **1.** Click on the components button to place the component on the table. 
