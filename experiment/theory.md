@@ -30,11 +30,6 @@ converges to a reverse (inverse) sawtooth wave. A conventional sawtooth can be c
 
 Where A is amplitude
 
-### **Applications:**
-
-1\. A sawtooth wave's spectrum contains both even and odd harmonics of the fundamental frequency. Because it contains all the integer harmonics, it is one of the best waveforms to use for subtractive synthesis of musical sounds, particularly bowed string instruments like violins and cellos, since the slip-stick behavior of the bow drives the strings with a sawtooth-like motion.  
-2\. The sawtooth wave is the form of the vertical and horizontal deflection signals used to generate a raster on CRT-based television or monitor screens. Oscilloscopes also use a sawtooth wave for their horizontal deflection, though they typically use electrostatic deflection.
-
 ### **Methods to generate the sawtooth wave:**
 
 There are many ways to generate sawtooth wave as: By Using transistor, ICs as 741, TL082, TL084, combination of IC 555 and 741, integrating square wave with a feedback capacitance, Unijunction Transistor (UJT) but we are using OP-Amp IC 741 to generate sawtooth waveform.
@@ -94,4 +89,13 @@ Frequency of the generated sawtooth wave can be calculated by -
 
 **f = (1 / 2C<sub>1</sub>(R<sub>3</sub>+R<sub>4</sub>)) × (R<sub>2</sub> / R<sub>1</sub>)** </div>
 
+### **Applications of Sawtooth Waveform**
+
+1\. A sawtooth wave's spectrum contains both even and odd harmonics of the fundamental frequency. Because it contains all the integer harmonics, it is one of the best waveforms to use for subtractive synthesis of musical sounds, particularly bowed string instruments like violins and cellos, since the slip-stick behavior of the bow drives the strings with a sawtooth-like motion. <br> 
+
+2\. The sawtooth wave is the form of the vertical and horizontal deflection signals used to generate a raster on CRT-based television or monitor screens. <br>
+
+3\. Oscilloscopes also use a sawtooth wave for their horizontal deflection, though they typically use electrostatic deflection. <br>
+
+4\. Sawtooth waves are used in signal processing applications, such as filtering and modulation, in various electronic systems.
 </div>
